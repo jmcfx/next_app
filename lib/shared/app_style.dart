@@ -9,3 +9,6 @@ TextStyle appStyle({ required double? fontSize, required Color color, required F
     fontWeight: fontWeight,
   );
 }
+
+
+
