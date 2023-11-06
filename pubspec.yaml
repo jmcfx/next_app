@@ -39,6 +39,7 @@ dependencies:
   google_fonts: ^6.1.0
   ionicons: ^0.2.2
   provider: ^6.0.5
+  community_material_icon: ^5.9.55
 
 dev_dependencies:
   flutter_test:
