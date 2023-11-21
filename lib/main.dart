@@ -17,7 +17,8 @@ void main(List<String> args) {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(
-            create: (context) => MainScreenNotifier(apis: Apis())),
+          create: (context) => MainScreenNotifier(),
+        ),
       ],
       child: const MyApp(),
     ),

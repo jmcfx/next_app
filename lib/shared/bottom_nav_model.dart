@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:next_app/controllers/mainscreen_provider.dart';
+import 'package:next_app/shared/app_style.dart';
 import 'package:next_app/shared/bottom_nav.dart';
 import 'package:provider/provider.dart';
 
@@ -13,16 +14,15 @@ class BottomNavBarModel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<MainScreenNotifier>(
-      builder: (context , mainScreenNotifier, child) => SafeArea(
+      builder: (context, mainScreenNotifier, child) => SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(8.w.h),
+          padding: customLTRB(left: 8, top: 8, right: 8, bottom: 8),
           child: Container(
-            padding: EdgeInsets.all(12.w),
-            margin: EdgeInsets.symmetric(horizontal: 10.h),
+            padding: EdgeInsets.all(12.r),
+            margin: EdgeInsets.symmetric(horizontal: 10.w),
             decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: const BorderRadius.all(Radius.circular(16)).w,
-            ),
+                color: Colors.black,
+                borderRadius: const BorderRadius.all(Radius.circular(16)).w),
             //Container's child is a Row that has a List of the BottomNavBar Icons ...
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
