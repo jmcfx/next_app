@@ -3,6 +3,7 @@ import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:next_app/shared/app_style.dart';
+import 'package:next_app/shared/product_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,6 +18,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFE2E2E2),
       body: SizedBox(
         height: MediaQuery.of(context).size.height,
         child: Stack(
@@ -56,6 +58,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     ),
                     // TabBar Takes  List of Tabs in the Column....
                     TabBar(
+                      padding:  EdgeInsets.zero,
                       controller: _tabController,
                       indicatorSize: TabBarIndicatorSize.label,
                       indicatorColor: Colors.transparent,
@@ -82,7 +85,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               padding: EdgeInsets.only(
                   top: MediaQuery.of(context).size.height * 0.21.h),
               child: Container(
-                color: Colors.grey.withOpacity(0.1),
+                color: Colors.grey.withOpacity(0.0),
                 padding: EdgeInsets.only(left: 11.w),
                 child: TabBarView(
                   controller: _tabController,
@@ -126,7 +129,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             ),
                           ],
                         ),
-                        //List of Shoes 
+                        //List of Shoes
                         SizedBox(
                           height: MediaQuery.of(context).size.height * 0.13.h,
                           child: ListView.builder(
@@ -141,13 +144,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                     borderRadius: BorderRadius.all(
                                       const Radius.circular(10).r,
                                     ),
-                                    boxShadow:  [
+                                    boxShadow: [
                                       BoxShadow(
-                                        color: Colors.black38,
-                                        spreadRadius: 0.1.r,
-                                        blurRadius: 0.7.r,
-                                        offset: const  Offset(0,1)
-                                      )
+                                          color: Colors.white,
+                                          spreadRadius: 0.1.r,
+                                          blurRadius: 0.7.r,
+                                          offset: const Offset(0, 1))
                                     ],
                                   ),
                                   height: MediaQuery.of(context).size.height *
@@ -156,8 +158,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                       0.30.w,
                                   child: CachedNetworkImage(
                                     imageUrl:
-                                      //  "https://png.pngitem.com/pimgs/s/680-6807721_vans-oldskool-shoes-sneakers-tumblr-trend-niche-popular.png",
-                                   "https://media.istockphoto.com/id/1629114862/photo/close-up-of-white-sports-shoes-on-a-white-background.webp?b=1&s=170667a&w=0&k=20&c=xJnzhqYgVTrLE_d3OB5FCAq34UBvYKCq3PgPUkrxjeM=",
+                                        //  "https://png.pngitem.com/pimgs/s/680-6807721_vans-oldskool-shoes-sneakers-tumblr-trend-niche-popular.png",
+                                        "https://media.istockphoto.com/id/1629114862/photo/close-up-of-white-sports-shoes-on-a-white-background.webp?b=1&s=170667a&w=0&k=20&c=xJnzhqYgVTrLE_d3OB5FCAq34UBvYKCq3PgPUkrxjeM=",
                                     fit: BoxFit.contain,
                                     width:
                                         MediaQuery.of(context).size.width * 0.5,
@@ -214,12 +216,13 @@ class TabviewSizedBox extends StatelessWidget {
         itemCount: 6,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.all(6).r,
-            child: Container(
-                color: Colors.blue,
-                height: MediaQuery.of(context).size.height.h,
-                width: MediaQuery.of(context).size.width * 0.5.w),
+          return const ProductCard(
+            image: "",
+            price: "\$20",
+            category: "Men Shoes",
+            id: "1",
+            name: 'Adidas MD',
+
           );
         },
       ),

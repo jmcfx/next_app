@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
-  //List of Navigation UI......
+  // List of Navigation UI......
   final List<Widget> pageList = const [
     HomePage(),
     SearchPage(),
@@ -60,14 +60,13 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // pageIndex has the current State in the pageList...
-    int pageIndex = 0;
 
-    devTools('$pageIndex');
     // This consumer is Listening to Only MainScreenNotifier Change in State...It then triggers a reBuild in the UI when there is a change in the PageIndex...
     return Consumer<MainScreenNotifier>(
       builder: (context, mainScreenNotifier, child) => Scaffold(
-        body: SafeArea(
-          // Rebuild UI Based on the State provided by MainScreenNotifier.....
+         backgroundColor: const Color(0xFFE2E2E2),
+        body:  SafeArea(
+          // Rebuild UI Based on the State provided by MainScreenNotifier then return the current pageIndex.....
           child: pageList[mainScreenNotifier.pageIndex],
         ),
         bottomNavigationBar: const BottomNavBarModel(),

@@ -1,0 +1,21 @@
+[
+  {
+    "id": "0",
+    "category": "Men's Running",
+    "imageUrl": ["", ""],
+    "oldPrice": "1899.00",
+    "size": [
+      { "size": "6.0", "isSelected": false },
+      { "size": "6.0", "isSelected": false },
+      { "size": "6.0", "isSelected": false },
+      { "size": "6.0", "isSelected": false },
+      { "size": "6.0", "isSelected": false },
+      { "size": "6.0", "isSelected": false },
+      { "size": "6.0", "isSelected": false }
+    ],
+    "price" : "79.00",
+    "description": "Put some pep in your step with the adidas ",
+    "title" : "Adidas running Shoes With cooling Ventilation"
+  }
+
+]
