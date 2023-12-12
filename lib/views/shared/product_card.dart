@@ -2,13 +2,13 @@
 import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:next_app/shared/app_style.dart';
+import 'package:next_app/views/shared/app_style.dart';
 
 class ProductCard extends StatefulWidget {
    const ProductCard({
-    Key? key,
+    super.key,
     required this.image, required this.price, required this.category, required this.id, required this.name,
-  }) : super(key: key);
+  });
 
   final String price, category, id, name, image;
 
@@ -22,21 +22,22 @@ class _ProductCardState extends State<ProductCard> {
   Widget build(BuildContext context) {
     bool selected = true;
     return Padding(
-      padding: const EdgeInsets.fromLTRB(8, 0, 20, 0).r,
+      padding: const EdgeInsets.fromLTRB(10, 0, 20, 0).r,
       child: ClipRRect(
-        borderRadius: const BorderRadius.all(Radius.circular(16)),
+        borderRadius:   BorderRadius.all(const Radius.circular(16).r),
         child: Container(
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width * 0.6,
-          decoration: const BoxDecoration(
+          height: MediaQuery.of(context).size.height.h,
+          width: MediaQuery.of(context).size.width * 0.6.w,
+          decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
                 color: Colors.white,
-                spreadRadius: 1,
-                blurRadius: 0.6,
-                offset: Offset(1, 1),
+                spreadRadius: 1.r,
+                blurRadius: 0.6.r,
+                offset: Offset(1.r, 1.r),
               )
-            ],
+            ]
+
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,7 +48,7 @@ class _ProductCardState extends State<ProductCard> {
                     height: MediaQuery.of(context).size.height * 0.23.h,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: NetworkImage(widget.image),
+                        image:NetworkImage(widget.image) ,
                       ),
                     ),
                   ),
@@ -69,7 +70,7 @@ class _ProductCardState extends State<ProductCard> {
                     Text(
                       widget.name,
                       style: appStyleWithHeight(
-                        fontSize: 36.sp,
+                        fontSize: 30.sp,
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
                         height: 1.1.h,
@@ -95,14 +96,14 @@ class _ProductCardState extends State<ProductCard> {
                     Text(
                       widget.price,
                       style: appStyle(
-                          fontSize: 30.sp,
+                          fontSize: 25.sp,
                           color: Colors.black,
-                          fontWeight: FontWeight.w600),
+                          fontWeight: FontWeight.w500),
                     ),
                     Row(
                       children: [
                         Text(
-                          "Colors",
+                          "Color",
                           style: appStyle(
                               fontSize: 18.sp,
                               color: Colors.grey,
@@ -115,9 +116,7 @@ class _ProductCardState extends State<ProductCard> {
                           label: const Text(""),
                           selected: selected,
                           visualDensity: VisualDensity.compact,
-                          selectedColor: Colors.black,
-
-                          
+                          selectedColor: Colors.white, 
                         )
                       ],
                     )

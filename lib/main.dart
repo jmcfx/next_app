@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:next_app/controllers/mainscreen_provider.dart';
-import 'package:next_app/shared/bottom_nav_model.dart';
+import 'package:next_app/views/shared/bottom_nav_model.dart';
 import 'package:next_app/views/navui/cartpage.dart';
 import 'package:next_app/views/navui/homepage.dart';
 import 'package:next_app/views/navui/profilepage.dart';
