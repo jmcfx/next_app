@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:next_app/controllers/mainscreen_provider.dart';
-import 'package:next_app/views/shared/bottom_nav_model.dart';
-import 'package:next_app/views/navui/cartpage.dart';
-import 'package:next_app/views/navui/homepage.dart';
-import 'package:next_app/views/navui/profilepage.dart';
-import 'package:next_app/views/navui/searchpage.dart';
+import 'package:next_app/controllers/main_screen_provider.dart';
+import 'package:next_app/views/navUi/main_screen.dart';
 import 'dart:developer' show log;
 import 'package:provider/provider.dart';
 
@@ -42,35 +38,6 @@ class MyApp extends StatelessWidget {
           home: MainScreen(),
         );
       },
-    );
-  }
-}
-
-class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
-  // List of Navigation UI......
-  final List<Widget> pageList = const [
-    HomePage(),
-    SearchPage(),
-    HomePage(),
-    CartPage(),
-    ProfilePage(),
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    // pageIndex has the current State in the pageList...
-
-    // This consumer is Listening to Only MainScreenNotifier Change in State...It then triggers a reBuild in the UI when there is a change in the PageIndex...
-    return Consumer<MainScreenNotifier>(
-      builder: (context, mainScreenNotifier, child) => Scaffold(
-         backgroundColor: const Color(0xFFE2E2E2),
-        body:  SafeArea(
-          // Rebuild UI Based on the State provided by MainScreenNotifier then return the current pageIndex.....
-          child: pageList[mainScreenNotifier.pageIndex],
-        ),
-        bottomNavigationBar: const BottomNavBarModel(),
-      ),
     );
   }
 }

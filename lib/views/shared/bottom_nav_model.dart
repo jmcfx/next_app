@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:next_app/controllers/mainscreen_provider.dart';
+import 'package:next_app/controllers/main_screen_provider.dart';
+
 import 'package:next_app/views/shared/app_style.dart';
-import 'package:next_app/views/shared/bottom_nav.dart';
+import 'package:next_app/views/shared/bottom_navBarIcon.dart';
 import 'package:provider/provider.dart';
 
 class BottomNavBarModel extends StatelessWidget {
