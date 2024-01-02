@@ -31,7 +31,7 @@ class MainScreen extends StatelessWidget {
           // Rebuild UI Based on the State provided by MainScreenNotifier then return the current pageIndex.....
           child: pageList[mainScreenNotifier.pageIndex],
         ),
-        bottomNavigationBar: const BottomNavBarModel(),
+        bottomNavigationBar: const BottomNavBarModel(), 
       ),
     );
   }

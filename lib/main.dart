@@ -15,6 +15,8 @@ void main(List<String> args) {
         ChangeNotifierProvider(
           create: (context) => MainScreenNotifier(),
         ),
+        
+
       ],
       child: const MyApp(),
     ),

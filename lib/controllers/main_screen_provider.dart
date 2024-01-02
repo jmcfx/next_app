@@ -11,5 +11,7 @@ class MainScreenNotifier extends ChangeNotifier {
   }
 
   // pageIndex returns the Value of Private Variable _pageIndex
-  int get pageIndex => _pageIndex;
+  int get pageIndex {
+    return _pageIndex;
+  }
 }

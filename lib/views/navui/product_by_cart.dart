@@ -42,6 +42,12 @@ class _ProductByCartState extends State<ProductByCart>
     getKids();
   }
 
+  List<String> brand = [
+    "assets/images/adidas.png",
+    "assets/images/gucci.png",
+    "assets/images/jordan.png",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,7 +83,7 @@ class _ProductByCartState extends State<ProductByCart>
                           ),
                           GestureDetector(
                             onTap: () {
-                              filter(context);
+                              filter(context, brand);
                             },
                             child: const Icon(FontAwesomeIcons.sliders,
                                 color: Colors.white),
@@ -135,14 +141,15 @@ class _ProductByCartState extends State<ProductByCart>
   }
 }
 
-Future<dynamic> filter(BuildContext context) {
+Future<dynamic> filter(BuildContext context, List<String> brand) {
+  double _value = 100;
   return showModalBottomSheet(
     context: context,
     isScrollControlled: true,
     backgroundColor: Colors.transparent,
     barrierColor: Colors.white54,
     builder: (context) => Container(
-      height: MediaQuery.of(context).size.height * 0.80.h,
+      height: MediaQuery.of(context).size.height * 0.78.h,
       width: MediaQuery.of(context).size.width.w,
       decoration: BoxDecoration(
           color: Colors.white,
@@ -171,15 +178,15 @@ Future<dynamic> filter(BuildContext context) {
                 Text(
                   "Filter",
                   style: appStyle(
-                      fontSize: 30.sp,
-                      color: Colors.black38,
+                      fontSize: 29.sp,
+                      color: Colors.black,
                       fontWeight: FontWeight.bold),
                 ),
                 const CustomSpacer(),
                 Text(
                   "Gender",
                   style: appStyle(
-                      fontSize: 20.sp,
+                      fontSize: 16.sp,
                       color: Colors.black,
                       fontWeight: FontWeight.bold),
                 ),
@@ -205,7 +212,7 @@ Future<dynamic> filter(BuildContext context) {
                     ),
                   ],
                 ),
-               const  CustomSpacer(),
+                const CustomSpacer(),
                 Text(
                   "Category",
                   style: appStyle(
@@ -214,27 +221,82 @@ Future<dynamic> filter(BuildContext context) {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-               SizedBox(
+                SizedBox(
                   height: 20.h,
                 ),
-                 Row(
+                Row(
                   children: [
                     CategoryBtn(
                       onPress: () {},
-                      label: "Women",
+                      label: "Shoes",
                       buttonClr: Colors.black,
                     ),
                     CategoryBtn(
                       onPress: () {},
-                      label: "Women",
+                      label: "Apparels",
                       buttonClr: Colors.grey,
                     ),
                     CategoryBtn(
                       onPress: () {},
-                      label: "Women",
+                      label: "Accessory ",
                       buttonClr: Colors.grey,
                     ),
                   ],
+                ),
+                const CustomSpacer(),
+                Text("Price ",
+                    style: appStyle(
+                        fontSize: 16.sp,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold)),
+                const CustomSpacer(),
+                Slider(
+                  value: _value,
+                  activeColor: Colors.black,
+                  inactiveColor: Colors.grey,
+                  thumbColor: Colors.black,
+                  max: 500,
+                  divisions: 50,
+                  label: _value.toString(),
+                  secondaryTrackValue: 200,
+                  onChanged: (double value) {},
+                ),
+                const CustomSpacer(),
+                Text(
+                  "Brand",
+                  style: appStyle(
+                    fontSize: 16.sp,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 20.h),
+                Container(
+                  padding: const EdgeInsets.all(8).r,
+                  height: 80.h,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: brand.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(8).r,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade200,
+                            borderRadius:
+                                BorderRadius.all(const Radius.circular(12).r),
+                          ),
+                          child: Image.asset(
+                            brand[index],
+                            height: 50.h,
+                            width: 70.w,
+                            fit: BoxFit.fill,
+                            // color: Colors.black12,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
                 )
               ],
             ),
