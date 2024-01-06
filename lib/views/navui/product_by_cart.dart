@@ -10,8 +10,10 @@ import 'package:next_app/views/shared/custom_spacer.dart';
 import 'package:next_app/views/shared/latest_shoes.dart';
 
 class ProductByCart extends StatefulWidget {
-  const ProductByCart({super.key});
-
+  const ProductByCart({
+    super.key, required this.tabIndex,
+  });
+  final int tabIndex;
   @override
   State<ProductByCart> createState() => _ProductByCartState();
 }
@@ -19,7 +21,7 @@ class ProductByCart extends StatefulWidget {
 class _ProductByCartState extends State<ProductByCart>
     with TickerProviderStateMixin {
   late final TabController _tabController =
-      TabController(length: 3, vsync: this);
+      TabController(length: 3, vsync: this, initialIndex : widget.tabIndex);
 
   late Future<List<Sneakers>> _male, _female, _kids;
   void getMale() {
@@ -46,6 +48,7 @@ class _ProductByCartState extends State<ProductByCart>
     "assets/images/adidas.png",
     "assets/images/gucci.png",
     "assets/images/jordan.png",
+    "assets/images/nike.png",
   ];
 
   @override
@@ -77,7 +80,9 @@ class _ProductByCartState extends State<ProductByCart>
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
                             child: const Icon(CommunityMaterialIcons.close,
                                 color: Colors.white),
                           ),
@@ -107,7 +112,9 @@ class _ProductByCartState extends State<ProductByCart>
                       dividerColor: Colors.black,
                       tabAlignment: TabAlignment.center,
                       tabs: const [
-                        Tab(text: "Men Shoes"),
+                        Tab(
+                          text: "Men Shoes",
+                        ),
                         Tab(text: "Women Shoes"),
                         Tab(text: "Kids Shoes"),
                       ],
@@ -126,9 +133,15 @@ class _ProductByCartState extends State<ProductByCart>
                   child: TabBarView(
                     controller: _tabController,
                     children: [
-                      LatestShoes(male: _male),
-                      LatestShoes(male: _female),
-                      LatestShoes(male: _kids),
+                      LatestShoes(
+                        male: _male,
+                      ),
+                      LatestShoes(
+                        male: _female,
+                      ),
+                      LatestShoes(
+                        male: _kids,
+                      ),
                     ],
                   ),
                 ),
@@ -250,6 +263,7 @@ Future<dynamic> filter(BuildContext context, List<String> brand) {
                         color: Colors.black,
                         fontWeight: FontWeight.bold)),
                 const CustomSpacer(),
+                //Slider....
                 Slider(
                   value: _value,
                   activeColor: Colors.black,

@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:next_app/models.dart/sneakers_model.dart';
+import 'package:next_app/views/navUi/product_page.dart';
 import 'package:next_app/views/shared/product_card.dart';
 
 class TabViewSizedBox extends StatelessWidget {
@@ -30,12 +31,23 @@ class TabViewSizedBox extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 final shoe = snapshot.data![index];
-                return ProductCard(
-                  image: shoe.imageUrl[0],
-                  price: "\$${shoe.price}",
-                  category: shoe.category,
-                  id: shoe.id,
-                  name: shoe.name,
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            ProductPage(id: shoe.id, category: shoe.category),
+                      ),
+                    );
+                  },
+                  child: ProductCard(
+                    image: shoe.imageUrl[0],
+                    price: "\$${shoe.price}",
+                    category: shoe.category,
+                    id: shoe.id,
+                    name: shoe.name,
+                  ),
                 );
               },
             );

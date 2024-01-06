@@ -1,11 +1,10 @@
 [
   {
     "id": "0",
-    "name": "Ultra Boost",
+    "name": "Ultra Boost Shoes",
     "category": "Men's Running",
     "imageUrl": [
-      "https://media.istockphoto.com/id/1629114862/photo/close-up-of-white-sports-shoes-on-a-white-background.webp?b=1&s=170667a&w=0&k=20&c=xJnzhqYgVTrLE_d3OB5FCAq34UBvYKCq3PgPUkrxjeM=",
-      "https://media.istockphoto.com/id/1629114862/photo/close-up-of-white-sports-shoes-on-a-white-background.webp?b=1&s=170667a&w=0&k=20&c=xJnzhqYgVTrLE_d3OB5FCAq34UBvYKCq3PgPUkrxjeM="
+      "https://media.istockphoto.com/id/1248566148/photo/pair-of-stylish-sneakers-isolated-on-white-background-white-casual-shoes.jpg?s=612x612&w=0&k=20&c=QDYrDLZt0Efyaj0wZF_8dA6lTv-j66bai9d4IXblFMY="
     ],
     "oldPrice": "1899.00",
     "size": [
@@ -23,33 +22,10 @@
   },
   {
     "id": "1",
-    "name": "Ultra Boost",
+    "name": "Ultra Boost Shoes",
     "category": "Men's Running",
     "imageUrl": [
-      "https://media.istockphoto.com/id/1629114862/photo/close-up-of-white-sports-shoes-on-a-white-background.webp?b=1&s=170667a&w=0&k=20&c=xJnzhqYgVTrLE_d3OB5FCAq34UBvYKCq3PgPUkrxjeM=",
-      "https://media.istockphoto.com/id/1629114862/photo/close-up-of-white-sports-shoes-on-a-white-background.webp?b=1&s=170667a&w=0&k=20&c=xJnzhqYgVTrLE_d3OB5FCAq34UBvYKCq3PgPUkrxjeM="
-    ],
-    "oldPrice": "1899.00",
-    "size": [
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false }
-    ],
-    "price": "79.00",
-    "description": "Put some pep in your step with the adidas ",
-    "title": "Adidas running Shoes With cooling Ventilation"
-  },
-  {
-    "id": "2",
-    "name": "Ultra Boost",
-    "category": "Men's Running",
-    "imageUrl": [
-      "https://media.istockphoto.com/id/1629114862/photo/close-up-of-white-sports-shoes-on-a-white-background.webp?b=1&s=170667a&w=0&k=20&c=xJnzhqYgVTrLE_d3OB5FCAq34UBvYKCq3PgPUkrxjeM=",
-      "https://media.istockphoto.com/id/1629114862/photo/close-up-of-white-sports-shoes-on-a-white-background.webp?b=1&s=170667a&w=0&k=20&c=xJnzhqYgVTrLE_d3OB5FCAq34UBvYKCq3PgPUkrxjeM="
+      "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/39/790729/4.jpg?7698"
     ],
     "oldPrice": "1899.00",
     "size": [
@@ -71,8 +47,7 @@
     "name": "Ultra Boost",
     "category": "Men's Running",
     "imageUrl": [
-      "https://media.istockphoto.com/id/1629114862/photo/close-up-of-white-sports-shoes-on-a-white-background.webp?b=1&s=170667a&w=0&k=20&c=xJnzhqYgVTrLE_d3OB5FCAq34UBvYKCq3PgPUkrxjeM=",
-      "https://media.istockphoto.com/id/1629114862/photo/close-up-of-white-sports-shoes-on-a-white-background.webp?b=1&s=170667a&w=0&k=20&c=xJnzhqYgVTrLE_d3OB5FCAq34UBvYKCq3PgPUkrxjeM="
+      "https://st2.depositphotos.com/4307429/7393/i/950/depositphotos_73934615-stock-photo-sneaker-on-white-background.jpg"
     ],
     "oldPrice": "1899.00",
     "size": [
@@ -93,8 +68,7 @@
     "name": "Ultra Boost",
     "category": "Men's Running",
     "imageUrl": [
-      "https://media.istockphoto.com/id/1629114862/photo/close-up-of-white-sports-shoes-on-a-white-background.webp?b=1&s=170667a&w=0&k=20&c=xJnzhqYgVTrLE_d3OB5FCAq34UBvYKCq3PgPUkrxjeM=",
-      "https://media.istockphoto.com/id/1629114862/photo/close-up-of-white-sports-shoes-on-a-white-background.webp?b=1&s=170667a&w=0&k=20&c=xJnzhqYgVTrLE_d3OB5FCAq34UBvYKCq3PgPUkrxjeM="
+      "https://st2.depositphotos.com/4307429/7393/i/950/depositphotos_73934615-stock-photo-sneaker-on-white-background.jpg"
     ],
     "oldPrice": "1899.00",
     "size": [

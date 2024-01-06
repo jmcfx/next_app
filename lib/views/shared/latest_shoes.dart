@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:next_app/models.dart/sneakers_model.dart';
 import 'package:next_app/views/shared/stagger_tile.dart';
+
 class LatestShoes extends StatelessWidget {
   const LatestShoes({
     super.key,
@@ -37,7 +38,6 @@ class LatestShoes extends StatelessWidget {
             itemBuilder: (context, index) {
               final shoe = snapshot.data![index];
               return StaggerTile(
-
                 imageUrl: shoe.imageUrl[0],
                 name: shoe.name,
                 price: "\$${shoe.price}",

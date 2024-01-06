@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           children: [
             //Container......
             Container(
-              padding: customLTRB(left: 16, top: 13, right: 0, bottom: 0),
+              padding: customLTRB(left: 16, top: 15, right: 0, bottom: 0),
               height: MediaQuery.of(context).size.height * 0.4.h,
               decoration: BoxDecoration(
                 color: Colors.black,
@@ -115,12 +115,20 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   controller: _tabController,
                   children: [
                     //Men shoes..
-                    HomeWidget(male: _male),
+                    HomeWidget(
+                      male: _male,
+                      tabIndex: 0,
+                    ),
                     //Women shoes...
-                    HomeWidget(male: _female),
+                    HomeWidget(
+                      male: _female,
+                      tabIndex: 1,
+                    ),
                     //kids shoes...
-                    HomeWidget(male: _kids)
-                    ,
+                    HomeWidget(
+                      male: _kids,
+                      tabIndex: 2,
+                    ),
                   ],
                 ),
               ),
@@ -131,6 +139,3 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     );
   }
 }
-
-         
-

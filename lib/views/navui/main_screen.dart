@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:next_app/controllers/main_screen_provider.dart';
 import 'package:next_app/views/navUi/cart_page.dart';
 import 'package:next_app/views/navUi/home_page.dart';
-import 'package:next_app/views/navUi/product_by_cart.dart';
 import 'package:next_app/views/navUi/profile_page.dart';
 import 'package:next_app/views/navUi/search_page.dart';
 import 'package:next_app/views/shared/bottom_nav_model.dart';
@@ -14,7 +13,7 @@ class MainScreen extends StatelessWidget {
   final List<Widget> pageList = const [
     HomePage(),
     SearchPage(),
-    ProductByCart(),
+    HomePage(),
     CartPage(),
     ProfilePage(),
   ];
@@ -22,16 +21,16 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // pageIndex has the current State in the pageList...
-
+    
     // This consumer is Listening to Only MainScreenNotifier Change in State...It then triggers a reBuild in the UI when there is a change in the PageIndex...
     return Consumer<MainScreenNotifier>(
       builder: (context, mainScreenNotifier, child) => Scaffold(
         backgroundColor: const Color(0xFFE2E2E2),
         body: SafeArea(
-          // Rebuild UI Based on the State provided by MainScreenNotifier then return the current pageIndex.....
+    
           child: pageList[mainScreenNotifier.pageIndex],
         ),
-        bottomNavigationBar: const BottomNavBarModel(), 
+        bottomNavigationBar: const BottomNavBarModel(),
       ),
     );
   }

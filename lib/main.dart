@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:next_app/controllers/main_screen_provider.dart';
+import 'package:next_app/controllers/product_provider.dart';
 import 'package:next_app/views/navUi/main_screen.dart';
+
 import 'dart:developer' show log;
 import 'package:provider/provider.dart';
 
@@ -12,11 +14,12 @@ void main(List<String> args) {
     // Wrapped MultiProvider Around MyApp.. To make it's Provided instance Accessible to all the descendant in the Widget Three..
     MultiProvider(
       providers: [
+        //MainScreenNotifier Provider...
         ChangeNotifierProvider(
           create: (context) => MainScreenNotifier(),
         ),
-        
-
+        // ProductNotifier Provider..
+        ChangeNotifierProvider(create: (context) => ProductNotifier())
       ],
       child: const MyApp(),
     ),

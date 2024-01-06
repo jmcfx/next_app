@@ -6,7 +6,9 @@ import 'package:next_app/views/shared/app_style.dart';
 class CategoryBtn extends StatelessWidget {
   const CategoryBtn({
     super.key,
-    required this.onPress, required this.label, required this.buttonClr,
+    required this.onPress,
+    required this.label,
+    required this.buttonClr,
   });
   final String label;
   final Color buttonClr;
@@ -27,11 +29,14 @@ class CategoryBtn extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(9.r)),
         ),
         child: Center(
-          child: Text(label,
-              style: appStyle(
-                  fontSize: 16.sp,
-                  color: buttonClr,
-                  fontWeight: FontWeight.w500)),
+          child: Text(
+            label,
+            style: appStyle(
+              fontSize: 15.sp,
+              color: buttonClr,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
         ),
       ),
     );

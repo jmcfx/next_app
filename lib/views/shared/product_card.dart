@@ -70,7 +70,7 @@ class _ProductCardState extends State<ProductCard> {
                     Text(
                       widget.name,
                       style: appStyleWithHeight(
-                        fontSize: 30.sp,
+                        fontSize: 22.sp,
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
                         height: 1.1.h,
