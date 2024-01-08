@@ -58,13 +58,14 @@ class _ProductPageState extends State<ProductPage> {
                       leadingWidth: 0,
                       title: Padding(
                         padding:
-                            const EdgeInsets.only(left: 1.0, bottom: 20.0).r,
+                            const EdgeInsets.only(left: 1.0, bottom: 37.0).r,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             GestureDetector(
                               onTap: () {
                                 Navigator.pop(context);
+                                productNotifier.shoeSizes.clear();
                               },
                               child: const Icon(
                                 Icons.close,
@@ -109,7 +110,8 @@ class _ProductPageState extends State<ProductPage> {
                                                 39.h,
                                         width:
                                             MediaQuery.of(context).size.width.w,
-                                        color: Colors.grey.shade300,
+                                        color:
+                                            Colors.blueGrey.withOpacity(0.15),
                                         child: CachedNetworkImage(
                                           imageUrl: sneakers.imageUrl[index],
                                           fit: BoxFit.contain,
@@ -187,9 +189,9 @@ class _ProductPageState extends State<ProductPage> {
                                         Text(
                                           sneakers.name,
                                           style: appStyle(
-                                            fontSize: 30.sp,
+                                            fontSize: 36.sp,
                                             color: Colors.black,
-                                            fontWeight: FontWeight.w500,
+                                            fontWeight: FontWeight.w600,
                                           ),
                                         ),
                                         Row(
@@ -197,7 +199,7 @@ class _ProductPageState extends State<ProductPage> {
                                             Text(
                                               sneakers.category,
                                               style: appStyle(
-                                                fontSize: 20.sp,
+                                                fontSize: 17.sp,
                                                 color: Colors.grey,
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -207,7 +209,7 @@ class _ProductPageState extends State<ProductPage> {
                                               height: 20.h,
                                             ),
                                             RatingBar.builder(
-                                              initialRating:  4.r,
+                                              initialRating: 4.r,
                                               minRating: 1.r,
                                               direction: Axis.horizontal,
                                               allowHalfRating: true,
@@ -220,13 +222,113 @@ class _ProductPageState extends State<ProductPage> {
                                               itemBuilder: (context, index) =>
                                                   Icon(
                                                 Icons.star,
-                                                size: 18.sp,
+                                                size: 20.sp,
                                                 color: Colors.black,
                                               ),
-                                              onRatingUpdate: (rating) {
-                                                
-                                              },
+                                              onRatingUpdate: (rating) {},
                                             ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: 20.h,
+                                        ),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              "\$${sneakers.price}",
+                                              style: appStyle(
+                                                fontSize: 26.sp,
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                            Row(
+                                              children: [
+                                                Text(
+                                                  "Colors",
+                                                  style: appStyle(
+                                                    fontSize: 15.sp,
+                                                    color: Colors.black,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  width: 5.w,
+                                                ),
+                                                CircleAvatar(
+                                                  radius: 7.r,
+                                                  backgroundColor: Colors.black,
+                                                ),
+                                                CircleAvatar(
+                                                  radius: 7.r,
+                                                  backgroundColor: Colors.black,
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: 20.h,
+                                        ),
+                                        Column(
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Text(
+                                                  "Select sizes",
+                                                  style: appStyle(
+                                                    fontSize: 16.sp,
+                                                    color: Colors.black,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  width: 20.w,
+                                                ),
+                                                Text(
+                                                  "View size guide",
+                                                  style: appStyle(
+                                                    fontSize: 16.sp,
+                                                    color: Colors.grey,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            SizedBox(
+                                              height: 10.h,
+                                            ),
+                                            SizedBox(
+                                              height: 40.h,
+                                              child: ListView.builder(
+                                                scrollDirection:
+                                                    Axis.horizontal,
+                                                padding: EdgeInsets.zero,
+                                                itemCount: productNotifier
+                                                    .shoeSizes.length,
+                                                itemBuilder: (context, index) {
+                                                  return ChoiceChip(
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              60),
+                                                      side: BorderSide(
+                                                        color: Colors.black,
+                                                        width: 1.w,
+                                                        style:
+                                                            BorderStyle.solid,
+                                                      ),
+                                                    ),
+                                                    label:Text(productNotifier.shoeSizes[index]["size"], style: appStyle(fontSize: 12.sp, color: Colors.black, fontWeight: FontWeight.w500)) ,
+                                                    selected: productNotifier.shoeSizes[index]["isSelected"],
+                                                    
+                                                  );
+                                                },
+                                              ),
+                                            )
                                           ],
                                         )
                                       ],

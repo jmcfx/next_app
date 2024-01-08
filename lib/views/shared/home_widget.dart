@@ -7,18 +7,21 @@ import 'package:next_app/views/navUi/product_by_cart.dart';
 import 'package:next_app/views/shared/app_style.dart';
 import 'package:next_app/views/shared/new_shoes.dart';
 import 'package:next_app/views/shared/tabview_sizedbox.dart';
+
+
 class HomeWidget extends StatelessWidget {
-  const HomeWidget({super.key, 
-    required Future<List<Sneakers>> male, required this.tabIndex,
-    
-  })  : _male = male;
-        
+  const HomeWidget({
+    super.key,
+    required Future<List<Sneakers>> male,
+    required this.tabIndex,
+  }) : _male = male;
+
   final Future<List<Sneakers>> _male;
   final int tabIndex;
-  
 
   @override
   Widget build(BuildContext context) {
+    
     return Column(
       children: [
         //Men Shoes Tab View...
@@ -46,8 +49,6 @@ class HomeWidget extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) => ProductByCart(
-
-
                             tabIndex: tabIndex,
                           ),
                         ),

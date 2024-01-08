@@ -1,9 +1,11 @@
 //Tab View Container Widget...
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:next_app/controllers/product_provider.dart';
 import 'package:next_app/models.dart/sneakers_model.dart';
 import 'package:next_app/views/navUi/product_page.dart';
 import 'package:next_app/views/shared/product_card.dart';
+import 'package:provider/provider.dart';
 
 class TabViewSizedBox extends StatelessWidget {
   const TabViewSizedBox({
@@ -14,6 +16,7 @@ class TabViewSizedBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     var productNotifier = Provider.of<ProductNotifier>(context );
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.37.h,
       width: MediaQuery.of(context).size.width.w,
@@ -33,7 +36,10 @@ class TabViewSizedBox extends StatelessWidget {
                 final shoe = snapshot.data![index];
                 return GestureDetector(
                   onTap: () {
+                    productNotifier.shoesSizes = shoe.size;
+                    print(productNotifier.shoeSizes);
                     Navigator.push(
+                      
                       context,
                       MaterialPageRoute(
                         builder: (context) =>
