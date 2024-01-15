@@ -72,7 +72,7 @@ class HomeWidget extends StatelessWidget {
             ),
           ],
         ),
-        //List of Shoes
+        //List of Shoes...
         Padding(
           padding: const EdgeInsets.all(0.5),
           child: SizedBox(

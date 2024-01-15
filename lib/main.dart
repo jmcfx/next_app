@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:next_app/controllers/main_screen_provider.dart';
 import 'package:next_app/controllers/product_provider.dart';
 import 'package:next_app/views/navUi/main_screen.dart';
-
 import 'dart:developer' show log;
 import 'package:provider/provider.dart';
 
 const devTools = log;
 
-void main(List<String> args) {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  await Hive.openBox("cart_box");
+  await Hive.openBox("fav_box");
+
   runApp(
     // Wrapped MultiProvider Around MyApp.. To make it's Provided instance Accessible to all the descendant in the Widget Three..
     MultiProvider(
@@ -38,7 +43,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (_, child) {
         //Screen Util returns MaterialApp..
-        return const MaterialApp(
+        return MaterialApp(
           //MainScreen.....
           home: MainScreen(),
         );

@@ -4,38 +4,41 @@
     "name": "Ultra Boost Shoes",
     "category": "Men's Running",
     "imageUrl": [
-      "https://media.istockphoto.com/id/1248566148/photo/pair-of-stylish-sneakers-isolated-on-white-background-white-casual-shoes.jpg?s=612x612&w=0&k=20&c=QDYrDLZt0Efyaj0wZF_8dA6lTv-j66bai9d4IXblFMY="
+      "https://media.istockphoto.com/id/1248566148/photo/pair-of-stylish-sneakers-isolated-on-white-background-white-casual-shoes.jpg?s=612x612&w=0&k=20&c=QDYrDLZt0Efyaj0wZF_8dA6lTv-j66bai9d4IXblFMY=",
+      "https://img.freepik.com/free-photo/new-pair-white-sneakers-isolated-white_93675-133039.jpg?size=626&ext=jpg",
+      "https://img.freepik.com/free-photo/one-white-sneaker-shoe-isolated-white_93675-133980.jpg?size=626&ext=jpg"
     ],
     "oldPrice": "1899.00",
     "size": [
       { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false }
+      { "size": "6.1", "isSelected": false },
+      { "size": "6.2", "isSelected": false },
+      { "size": "6.3", "isSelected": false },
+      { "size": "6.4", "isSelected": false },
+      { "size": "6.5", "isSelected": false },
+      { "size": "6.6", "isSelected": false }
     ],
     "price": "80.00",
-    "description": "Put some pep in your step with the adidas ",
-    "title": "Adidas running Shoes With cooling Ventilation"
+    "description": "Put some pep in your step with the adidas Originals NMD R1.V2 The modern sihouette teams up with retro details to create a truly stand-out look.your new favorite sneakers are right here.Regular fit shows off a",
+    "title": "Adidas Running Shoes With Cooling Ventilation"
   },
   {
     "id": "1",
     "name": "Ultra Boost Shoes",
     "category": "Men's Running",
     "imageUrl": [
-      "https://ng.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/39/790729/4.jpg?7698"
+      "https://img.freepik.com/free-photo/fashion-shoes-sneakers_1203-7528.jpg?size=626&ext=jpg&ga=GA1.2.1331211179.1704756651&semt=ais",
+      "https://img.freepik.com/free-photo/shoes_1203-8107.jpg?size=626&ext=jpg "
     ],
     "oldPrice": "1899.00",
     "size": [
       { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false }
+      { "size": "6.1", "isSelected": false },
+      { "size": "6.2", "isSelected": false },
+      { "size": "6.3", "isSelected": false },
+      { "size": "6.4", "isSelected": false },
+      { "size": "6.5", "isSelected": false },
+      { "size": "6.6", "isSelected": false }
     ],
     "price": "79.00",
     "description": "Put some pep in your step with the adidas ",
@@ -47,41 +50,43 @@
     "name": "Ultra Boost Shoes",
     "category": "Men's Running",
     "imageUrl": [
+      "https://img.freepik.com/free-photo/men-shoes_1203-8652.jpg?size=626&ext=jpg&ga=GA1.2.1331211179.1704756651&semt=ais",
       "https://st2.depositphotos.com/4307429/7393/i/950/depositphotos_73934615-stock-photo-sneaker-on-white-background.jpg"
     ],
     "oldPrice": "1899.00",
     "size": [
       { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false }
+      { "size": "6.1", "isSelected": false },
+      { "size": "6.2", "isSelected": false },
+      { "size": "6.3", "isSelected": false },
+      { "size": "6.4", "isSelected": false },
+      { "size": "6.5", "isSelected": false },
+      { "size": "6.6", "isSelected": false }
     ],
     "price": "79.00",
     "description": "Put some pep in your step with the adidas ",
     "title": "Adidas running Shoes With cooling Ventilation"
   },
   {
-    "id": "2",
+    "id": "3",
     "name": "Ultra Boost Shoes",
     "category": "Men's Running",
     "imageUrl": [
+      "https://img.freepik.com/free-photo/childhood-cute-pair-child-baby_1203-5957.jpg?size=626&ext=jpg&ga=GA1.2.1331211179.1704756651&semt=ais",
       "https://st2.depositphotos.com/4307429/7393/i/950/depositphotos_73934615-stock-photo-sneaker-on-white-background.jpg"
     ],
     "oldPrice": "1899.00",
     "size": [
       { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false },
-      { "size": "6.0", "isSelected": false }
+      { "size": "6.1", "isSelected": false },
+      { "size": "6.2", "isSelected": false },
+      { "size": "6.3", "isSelected": false },
+      { "size": "6.4", "isSelected": false },
+      { "size": "6.5", "isSelected": false },
+      { "size": "6.6", "isSelected": false }
     ],
     "price": "79.00",
     "description": "Put some pep in your step with the adidas ",
-    "title": "Adidas running Shoes With cooling Ventilation"
+    "title": "Adidas Running Shoes With Cooling Ventilation"
   }
 ]
