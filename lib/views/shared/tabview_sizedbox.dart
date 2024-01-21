@@ -18,7 +18,7 @@ class TabViewSizedBox extends StatelessWidget {
   Widget build(BuildContext context) {
      var productNotifier = Provider.of<ProductNotifier>(context );
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.37.h,
+      height: MediaQuery.of(context).size.height * 0.32.h,
       width: MediaQuery.of(context).size.width.w,
       child: FutureBuilder<List<Sneakers>>(
         future: future,

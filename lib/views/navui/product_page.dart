@@ -3,11 +3,12 @@ import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hive/hive.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:next_app/controllers/cart_provider.dart';
+import 'package:next_app/controllers/favorites_provider.dart';
 import 'package:next_app/controllers/product_provider.dart';
 import 'package:next_app/models.dart/sneakers_model.dart';
-import 'package:next_app/services/helper.dart';
+import 'package:next_app/views/navUi/favorites.dart';
 import 'package:next_app/views/shared/app_style.dart';
 import 'package:next_app/views/shared/check_out_button.dart';
 import 'package:provider/provider.dart';
@@ -23,34 +24,21 @@ class _ProductPageState extends State<ProductPage> {
   // pageController.....
   final PageController pageController = PageController();
   // cartBox....
-  final _cartBox = Hive.box("cart_box");
-
-  late Future<Sneakers> _sneakers;
-  void getShoes() {
-    if (widget.category == "Men's Running") {
-      _sneakers = Helper().getFemaleSneakersById(widget.id);
-    } else if (widget.category == "Men Running ") {
-      _sneakers = Helper().getFemaleSneakersById(widget.id);
-    } else {
-      _sneakers = Helper().getKidSneakersById(widget.id);
-    }
-  }
-
-  Future<void> _createCart(Map<String, dynamic> newCart) async {
-    await _cartBox.add(newCart);
-  }
 
   @override
-  void initState() {
-    super.initState();
-    getShoes();
-  }
-
   @override
   Widget build(BuildContext context) {
+    var productNotifier = Provider.of<ProductNotifier>(context);
+    productNotifier.getShoes(widget.category, widget.id);
+    var cartprovider = Provider.of<CartProvider>(context);
+    cartprovider.getCart();
+
+    var favoritesNotifier =
+        Provider.of<FavoritesNotifier>(context, listen: true);
+    favoritesNotifier.getFavorites();
     return Scaffold(
       body: FutureBuilder<Sneakers>(
-        future: _sneakers,
+        future: productNotifier.sneakers,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const CircularProgressIndicator();
@@ -139,10 +127,40 @@ class _ProductPageState extends State<ProductPage> {
                                             MediaQuery.of(context).size.height *
                                                 0.11.h,
                                         right: 16.w,
-                                        child: const Icon(
-                                            CommunityMaterialIcons
-                                                .heart_outline,
-                                            color: Colors.grey),
+                                        child: Consumer<FavoritesNotifier>(
+                                            builder: (context,
+                                                favoritesNotifier, child) {
+                                          return GestureDetector(
+                                              onTap: () {
+                                                if (favoritesNotifier.ids
+                                                    .contains(widget.id)) {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const Favorites()));
+                                                } else {
+                                                  favoritesNotifier.getAllData()({
+                                                    "id": sneakers.id,
+                                                    "name": sneakers.name,
+                                                    "category":
+                                                        sneakers.category,
+                                                    "price": sneakers.price,
+                                                    "imageUrl":
+                                                        sneakers.imageUrl[0],
+                                                  });
+                                                }
+                                                setState(() {});
+                                              },
+                                              child: favoritesNotifier.ids
+                                                      .contains(sneakers.id)
+                                                  ? const Icon(
+                                                      CommunityMaterialIcons
+                                                          .heart)
+                                                  : const Icon(
+                                                      CommunityMaterialIcons
+                                                          .heart_outline));
+                                        }),
                                       ),
                                       Positioned(
                                         bottom: 0.r,
@@ -456,13 +474,13 @@ class _ProductPageState extends State<ProductPage> {
                                                       .r,
                                               child: CheckOutButton(
                                                   onTap: () async {
-                                                    _createCart(
+                                                    favoritesNotifier.getAllData()(
                                                       {
                                                         "id": sneakers.id,
                                                         "name": sneakers.name,
                                                         "category":
                                                             sneakers.category,
-                                                        '"sizes"': productNotifier
+                                                        "sizes": productNotifier
                                                             .sizes,
                                                         "imageUrl": sneakers
                                                             .imageUrl[0],
@@ -470,8 +488,6 @@ class _ProductPageState extends State<ProductPage> {
                                                         "qty": 1,
                                                       },
                                                     );
-                                                    productNotifier.sizes
-                                                        .clear();
                                                     Navigator.pop(context);
                                                   },
                                                   label: "Add to Cart"),

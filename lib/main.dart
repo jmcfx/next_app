@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:next_app/controllers/cart_provider.dart';
+import 'package:next_app/controllers/favorites_provider.dart';
 import 'package:next_app/controllers/main_screen_provider.dart';
 import 'package:next_app/controllers/product_provider.dart';
 import 'package:next_app/views/navUi/main_screen.dart';
@@ -23,8 +25,12 @@ void main() async {
         ChangeNotifierProvider(
           create: (context) => MainScreenNotifier(),
         ),
-        // ProductNotifier Provider..
-        ChangeNotifierProvider(create: (context) => ProductNotifier())
+        // ProductNotifier Provider...
+        ChangeNotifierProvider(create: (context) => ProductNotifier()),
+        //FavoritesNotifier Provider...
+        ChangeNotifierProvider(create: (context) => FavoritesNotifier()),
+        //CartNotifier Provider.....
+        ChangeNotifierProvider(create: (context)=> CartProvider()),
       ],
       child: const MyApp(),
     ),
@@ -38,12 +44,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //MyApp returns Screen Util..
     return ScreenUtilInit(
-      designSize: const Size(390, 844),
+      designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_, child) {
         //Screen Util returns MaterialApp..
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           //MainScreen.....
           home: MainScreen(),
         );

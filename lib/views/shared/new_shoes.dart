@@ -15,7 +15,7 @@ class NewShoes extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.all(
-            const Radius.circular(10).r,
+             Radius.circular(10.h),
           ),
           boxShadow: [
             BoxShadow(
@@ -26,13 +26,13 @@ class NewShoes extends StatelessWidget {
             )
           ],
         ),
-        height: MediaQuery.of(context).size.height * 0.12.h,
-        width: MediaQuery.of(context).size.width * 0.30.w,
+        height:  100.h,
+        width:  104.w,
         child:   CachedNetworkImage(
             imageUrl: imageUrl,
             fit: BoxFit.contain,
             width:
-               MediaQuery.of(context).size.width * 0.5,
+               MediaQuery.of(context).size.width * 0.5.w,
            placeholder: (context, url) => Center(
               child: CircularProgressIndicator(
                color: Colors.grey.withOpacity(0.2),

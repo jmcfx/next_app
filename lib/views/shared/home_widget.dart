@@ -74,9 +74,9 @@ class HomeWidget extends StatelessWidget {
         ),
         //List of Shoes...
         Padding(
-          padding: const EdgeInsets.all(0.5),
+          padding: const  EdgeInsets.all(0.5).r,
           child: SizedBox(
-            height: MediaQuery.of(context).size.height * 0.13.h,
+            height:  99.h,
             child: FutureBuilder<List<Sneakers>>(
               future: _male,
               builder: (context, snapshot) {
@@ -92,7 +92,7 @@ class HomeWidget extends StatelessWidget {
                     itemBuilder: (context, index) {
                       final shoe = snapshot.data![index];
                       return Padding(
-                        padding: const EdgeInsets.all(7.0),
+                        padding: const EdgeInsets.all(7.0).r,
                         child: NewShoes(
                           imageUrl: shoe.imageUrl[0],
                         ),

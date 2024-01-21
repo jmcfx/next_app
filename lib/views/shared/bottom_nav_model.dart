@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:next_app/controllers/main_screen_provider.dart';
-
 import 'package:next_app/views/shared/app_style.dart';
 import 'package:next_app/views/shared/bottom_navBarIcon.dart';
 import 'package:provider/provider.dart';
@@ -50,8 +49,8 @@ class BottomNavBarModel extends StatelessWidget {
                     mainScreenNotifier.pageIndex = 2;
                   },
                   icon: mainScreenNotifier.pageIndex == 2
-                      ? Icons.add
-                      : Icons.add_outlined,
+                      ? Ionicons.heart
+                      : Ionicons.heart_circle_outline
                 ),
                 BottomNavBarIcons(
                   onTap: () {

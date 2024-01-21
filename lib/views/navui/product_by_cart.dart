@@ -2,16 +2,17 @@ import 'package:community_material_icon/community_material_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:next_app/models.dart/sneakers_model.dart';
-import 'package:next_app/services/helper.dart';
+import 'package:next_app/controllers/product_provider.dart';
 import 'package:next_app/views/shared/app_style.dart';
 import 'package:next_app/views/shared/category_btn.dart';
 import 'package:next_app/views/shared/custom_spacer.dart';
 import 'package:next_app/views/shared/latest_shoes.dart';
+import 'package:provider/provider.dart';
 
 class ProductByCart extends StatefulWidget {
   const ProductByCart({
-    super.key, required this.tabIndex,
+    super.key,
+    required this.tabIndex,
   });
   final int tabIndex;
   @override
@@ -21,27 +22,18 @@ class ProductByCart extends StatefulWidget {
 class _ProductByCartState extends State<ProductByCart>
     with TickerProviderStateMixin {
   late final TabController _tabController =
-      TabController(length: 3, vsync: this, initialIndex : widget.tabIndex);
-
-  late Future<List<Sneakers>> _male, _female, _kids;
-  void getMale() {
-    _male = Helper().getMaleSneakers();
-  }
-
-  void getFemale() {
-    _female = Helper().getFemaleSneakers();
-  }
-
-  void getKids() {
-    _kids = Helper().getKidsSneakers();
-  }
+      TabController(length: 3, vsync: this, initialIndex: widget.tabIndex);
 
   @override
   void initState() {
     super.initState();
-    getMale();
-    getFemale();
-    getKids();
+    _tabController.animateTo(widget.tabIndex, curve: Curves.easeIn);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
   }
 
   List<String> brand = [
@@ -53,6 +45,10 @@ class _ProductByCartState extends State<ProductByCart>
 
   @override
   Widget build(BuildContext context) {
+    var productNotifier = Provider.of<ProductNotifier>(context);
+    productNotifier.getFemale();
+    productNotifier.getFemale();
+    productNotifier.getKids();
     return Scaffold(
       backgroundColor: const Color(0xFFE2E2E2),
       body: SafeArea(
@@ -134,13 +130,13 @@ class _ProductByCartState extends State<ProductByCart>
                     controller: _tabController,
                     children: [
                       LatestShoes(
-                        male: _male,
+                        male: productNotifier.male,
                       ),
                       LatestShoes(
-                        male: _female,
+                        male: productNotifier.female,
                       ),
                       LatestShoes(
-                        male: _kids,
+                        male: productNotifier.kids,
                       ),
                     ],
                   ),

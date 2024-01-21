@@ -23,7 +23,7 @@ class _StaggerTileState extends State<StaggerTile> {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.all(const Radius.circular(16).h),  
+        borderRadius: BorderRadius.all(const Radius.circular(16).h),
       ),
       child: Padding(
         padding: const EdgeInsets.all(8).r,
@@ -49,14 +49,15 @@ class _StaggerTileState extends State<StaggerTile> {
                         color: Colors.black,
                         fontWeight: FontWeight.w700,
                         height: 1.h),
-                  ), 
+                  ),
                   Text(
                     widget.price,
                     style: appStyleWithHeight(
-                        fontSize: 20.sp,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w700,
-                        height: 1.h),
+                      fontSize: 20.sp,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w700,
+                      height: 1.h,
+                    ),
                   )
                 ],
               ),

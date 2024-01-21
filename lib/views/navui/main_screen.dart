@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:next_app/controllers/main_screen_provider.dart';
-import 'package:next_app/views/navUi/cart.dart';
+import 'package:next_app/views/navUi/cart_page.dart';
+import 'package:next_app/views/navUi/favorites.dart';
 import 'package:next_app/views/navUi/home_page.dart';
 import 'package:next_app/views/navUi/profile_page.dart';
 import 'package:next_app/views/navUi/search_page.dart';
@@ -13,9 +14,11 @@ class MainScreen extends StatelessWidget {
   final List<Widget> pageList =  [
    const  HomePage(),
    const  SearchPage(),
-   const HomePage(),
-    CartPage(),
+   const Favorites(),
+   const  CartPage(),
    const ProfilePage(),
+  
+
   ];
 
   @override
@@ -30,7 +33,7 @@ class MainScreen extends StatelessWidget {
     
           child: pageList[mainScreenNotifier.pageIndex],
         ),
-        bottomNavigationBar: const BottomNavBarModel(),
+        bottomNavigationBar: const BottomNavBarModel(), 
       ),
     );
   }

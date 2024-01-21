@@ -1,10 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_firs
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:next_app/models.dart/sneakers_model.dart';
-import 'package:next_app/services/helper.dart';
+import 'package:next_app/controllers/product_provider.dart';
 import 'package:next_app/views/shared/app_style.dart';
 import 'package:next_app/views/shared/home_widget.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,49 +16,33 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   late final TabController _tabController =
       TabController(length: 3, vsync: this);
-  late Future<List<Sneakers>> _male, _female, _kids;
-  void getMale() {
-    _male = Helper().getMaleSneakers();
-  }
-
-  void getFemale() {
-    _female = Helper().getFemaleSneakers();
-  }
-
-  void getKids() {
-    _kids = Helper().getKidsSneakers();
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    getMale();
-    getFemale();
-    getKids();
-  }
-
   @override
   Widget build(BuildContext context) {
+    var productNotifier = Provider.of<ProductNotifier>(context);
+    productNotifier.getMale();
+    productNotifier.getFemale();
+    productNotifier.getKids();
     return Scaffold(
       backgroundColor: const Color(0xFFE2E2E2),
       body: SizedBox(
-        height: MediaQuery.of(context).size.height,
+        height: 812.h,
+        width: 375.w,
         child: Stack(
           children: [
             //Container......
             Container(
               padding: customLTRB(left: 16, top: 15, right: 0, bottom: 0),
-              height: MediaQuery.of(context).size.height * 0.4.h,
+              height: 325.h,
               decoration: BoxDecoration(
                 color: Colors.black,
                 borderRadius: BorderRadius.only(
-                  bottomRight: const Radius.circular(140).r,
-                  bottomLeft: const Radius.circular(140).r,
+                  bottomRight: const Radius.circular(130).r,
+                  bottomLeft:  Radius.elliptical(1.r, 20.r),
                 ),
               ),
               child: Container(
                 padding: EdgeInsets.only(left: 8.w, bottom: 16.h),
-                width: MediaQuery.of(context).size.width.w,
+                width: 375.w,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -107,7 +91,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             //Children of the Stacked....
             Padding(
               padding: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height * 0.21.h),
+                  top:  203.h),
               child: Container(
                 color: Colors.grey.withOpacity(0.0),
                 padding: EdgeInsets.only(left: 11.w),
@@ -116,17 +100,17 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   children: [
                     //Men shoes..
                     HomeWidget(
-                      male: _male,
+                      male: productNotifier.male,
                       tabIndex: 0,
                     ),
                     //Women shoes...
                     HomeWidget(
-                      male: _female,
+                      male: productNotifier.female,
                       tabIndex: 1,
                     ),
                     //kids shoes...
                     HomeWidget(
-                      male: _kids,
+                      male: productNotifier.kids,
                       tabIndex: 2,
                     ),
                   ],
